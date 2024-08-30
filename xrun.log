@@ -1,0 +1,76 @@
+xrun: 23.09-s001: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun	23.09-s001: Started on Aug 30, 2024 at 04:22:12 EDT
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	-sysv
+	-access +rw
+	design.sv
+	testbench.sv
+	Top level design units:
+		$unit_0x67f934e9
+		test_bench
+Loading snapshot worklib.test_bench:sv .................... Done
+xcelium> source /xcelium23.09/tools/xcelium/files/xmsimrc
+xcelium> run
+T =30 [Test] Starting stimulus...
+ test data addr =5cd wr=1 wdata=10
+T=30 [Driver] starting...
+T=30 [Monitor] starting...
+T=30 [Driver] waiting for item...
+t=30 [Driver] addr =0x5cd wr=1 wdata=0x10 rdata=0x0
+driver haddr =5cd hwrite=1        16
+ monitor addr =5cd wr=1        16
+t=50 [Monitor] addr =0x5cd wr=1 wdata=0x10 rdata=0x0
+T=50 [Driver] waiting for item...
+t=50 [Scoreboard] addr =0x5cd wr=1 wdata=0x10 rdata=0x0
+T=50 [Scoreboard] store addr=0x5cd wr=0x1 data=0x10
+ monitor addr =5cd wr=1        16
+t=70 [Monitor] addr =0x5cd wr=1 wdata=0x10 rdata=0x0
+t=70 [Scoreboard] addr =0x5cd wr=1 wdata=0x10 rdata=0x0
+T=70 [Scoreboard] store addr=0x5cd wr=0x1 data=0x10
+ test data addr =cd6 wr=0
+t=75 [Driver] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+driver haddr =cd6 hwrite=0         0
+ monitor addr =cd6 wr=0         0
+T=90 [Driver] waiting for item...
+ test data addr =cd6 wr=1
+t=105 [Driver] addr =0xcd6 wr=1 wdata=0x0 rdata=0x0
+driver haddr =cd6 hwrite=1         0
+T=110 [Driver] waiting for item...
+t=110 [Monitor] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+t=110 [Scoreboard] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+T=110 [Scoreboard] ERROR! First time read, addr=0xcd6 exp=1234 act=0x0
+ test data addr =cd6 wr=0
+t=130 [Driver] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+driver haddr =cd6 hwrite=0         0
+T=130 [Driver] waiting for item...
+ monitor addr =cd6 wr=1         0
+t=130 [Monitor] addr =0xcd6 wr=1 wdata=0x0 rdata=0x0
+t=130 [Scoreboard] addr =0xcd6 wr=1 wdata=0x0 rdata=0x0
+T=130 [Scoreboard] store addr=0xcd6 wr=0x1 data=0x0
+ monitor addr =cd6 wr=0         0
+t=170 [Monitor] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+t=170 [Scoreboard] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+T=170 [Scoreboard] ERROR! First time read, addr=0xcd6 exp=1234 act=0x0
+ monitor addr =cd6 wr=0         0
+t=210 [Monitor] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+t=210 [Scoreboard] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+T=210 [Scoreboard] ERROR! First time read, addr=0xcd6 exp=1234 act=0x0
+ monitor addr =cd6 wr=0         0
+t=250 [Monitor] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+t=250 [Scoreboard] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+T=250 [Scoreboard] ERROR! First time read, addr=0xcd6 exp=1234 act=0x0
+ monitor addr =cd6 wr=0         0
+t=290 [Monitor] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+t=290 [Scoreboard] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+T=290 [Scoreboard] ERROR! First time read, addr=0xcd6 exp=1234 act=0x0
+ monitor addr =cd6 wr=0         0
+t=330 [Monitor] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+t=330 [Scoreboard] addr =0xcd6 wr=0 wdata=0x0 rdata=0x0
+T=330 [Scoreboard] ERROR! First time read, addr=0xcd6 exp=1234 act=0x0
+Simulation complete via $finish(1) at time 350 NS + 0
+./testbench.sv:69     #350 $finish ;
+xcelium> exit
+TOOL:	xrun	23.09-s001: Exiting on Aug 30, 2024 at 04:22:14 EDT  (total: 00:00:02)
